@@ -1,0 +1,161 @@
+// =============================================================================
+// File        : soc_demo.hex
+// Project     : RISC-8 5-stage CPU + 8-bit Timer/ADC Peripheral
+// Author      : Le Ky Dung
+// Student ID  : SE190745
+// Description : Assembled firmware, one 16-bit instruction per line.
+//               Loaded into imem with $readmemh. Text after // is ignored.
+// =============================================================================
+// Format: <hex>   // <address>: <label> <instruction>
+// ================= Part A: read ID =================
+8EFF   // 00:         LDI R7, 0xFF
+93C0   // 01:         LD R1, [R7]
+8C80   // 02:         LDI R6, 0x80
+A380   // 03:         ST R1, [R6]
+8410   // 04:         LDI R2, 0x10
+8601   // 05:         LDI R3, 1
+1D98   // 06:         ADD R6, R6, R3
+// ================= Part B =================
+8EF6   // 07:         LDI R7, 0xF6
+8203   // 08:         LDI R1, 3
+A3C0   // 09:         ST R1, [R7]
+8EF7   // 0A:         LDI R7, 0xF7
+8200   // 0B:         LDI R1, 0
+A3C0   // 0C:         ST R1, [R7]
+8EF5   // 0D:         LDI R7, 0xF5
+8213   // 0E:         LDI R1, 0x13
+A3C0   // 0F:         ST R1, [R7]
+8EFC   // 10:         LDI R7, 0xFC
+93C0   // 11: waitB:  LD R1, [R7]
+3250   // 12:         AND R1, R1, R2
+C0FD   // 13:         BNZ waitB
+8EFB   // 14:         LDI R7, 0xFB
+93C0   // 15:         LD R1, [R7]
+A380   // 16:         ST R1, [R6]
+1D98   // 17:         ADD R6, R6, R3
+8EFA   // 18:         LDI R7, 0xFA
+93C0   // 19:         LD R1, [R7]
+A380   // 1A:         ST R1, [R6]
+1D98   // 1B:         ADD R6, R6, R3
+// ================= Part C =================
+8EF1   // 1C:         LDI R7, 0xF1
+8203   // 1D:         LDI R1, 3
+A3C0   // 1E:         ST R1, [R7]
+8EF2   // 1F:         LDI R7, 0xF2
+8218   // 20:         LDI R1, 24
+A3C0   // 21:         ST R1, [R7]
+8EF3   // 22:         LDI R7, 0xF3
+820C   // 23:         LDI R1, 12
+A3C0   // 24:         ST R1, [R7]
+8EF5   // 25:         LDI R7, 0xF5
+8225   // 26:         LDI R1, 0x25
+A3C0   // 27:         ST R1, [R7]
+8EF0   // 28:         LDI R7, 0xF0
+8201   // 29:         LDI R1, 1
+A3C0   // 2A:         ST R1, [R7]
+8A04   // 2B:         LDI R5, 4
+88FF   // 2C:         LDI R4, 0xFF
+8EFC   // 2D: loopC:  LDI R7, 0xFC
+93C0   // 2E: waitC:  LD R1, [R7]
+3250   // 2F:         AND R1, R1, R2
+C0FD   // 30:         BNZ waitC
+8EFB   // 31:         LDI R7, 0xFB
+93C0   // 32:         LD R1, [R7]
+A380   // 33:         ST R1, [R6]
+1D98   // 34:         ADD R6, R6, R3
+8EFA   // 35:         LDI R7, 0xFA
+93C0   // 36:         LD R1, [R7]
+A380   // 37:         ST R1, [R6]
+1D98   // 38:         ADD R6, R6, R3
+1B60   // 39:         ADD R5, R5, R4
+C0F2   // 3A:         BNZ loopC
+8EF5   // 3B:         LDI R7, 0xF5
+8201   // 3C:         LDI R1, 0x01
+A3C0   // 3D:         ST R1, [R7]
+8EF0   // 3E:         LDI R7, 0xF0
+8200   // 3F:         LDI R1, 0
+A3C0   // 40:         ST R1, [R7]
+8EFE   // 41:         LDI R7, 0xFE
+93C0   // 42:         LD R1, [R7]
+A380   // 43:         ST R1, [R6]
+1D98   // 44:         ADD R6, R6, R3
+8204   // 45:         LDI R1, 0x04
+A3C0   // 46:         ST R1, [R7]
+93C0   // 47:         LD R1, [R7]
+A380   // 48:         ST R1, [R6]
+1D98   // 49:         ADD R6, R6, R3
+823F   // 4A:         LDI R1, 0x3F
+A3C0   // 4B:         ST R1, [R7]
+// ================= Part D =================
+8EF9   // 4C:         LDI R7, 0xF9
+8264   // 4D:         LDI R1, 100
+A3C0   // 4E:         ST R1, [R7]
+8EFD   // 4F:         LDI R7, 0xFD
+8208   // 50:         LDI R1, 0x08
+A3C0   // 51:         ST R1, [R7]
+8EF5   // 52:         LDI R7, 0xF5
+8233   // 53:         LDI R1, 0x33
+A3C0   // 54:         ST R1, [R7]
+8EFC   // 55:         LDI R7, 0xFC
+93C0   // 56: waitD:  LD R1, [R7]
+3250   // 57:         AND R1, R1, R2
+C0FD   // 58:         BNZ waitD
+8EFE   // 59:         LDI R7, 0xFE
+93C0   // 5A:         LD R1, [R7]
+A380   // 5B:         ST R1, [R6]
+1D98   // 5C:         ADD R6, R6, R3
+A3C0   // 5D:         ST R1, [R7]
+8EFA   // 5E:         LDI R7, 0xFA
+93C0   // 5F:         LD R1, [R7]
+A380   // 60:         ST R1, [R6]
+1D98   // 61:         ADD R6, R6, R3
+8EFD   // 62:         LDI R7, 0xFD
+8200   // 63:         LDI R1, 0
+A3C0   // 64:         ST R1, [R7]
+8EF9   // 65:         LDI R7, 0xF9
+82FF   // 66:         LDI R1, 0xFF
+A3C0   // 67:         ST R1, [R7]
+// ================= Part F =================
+8EF5   // 68:         LDI R7, 0xF5
+8203   // 69:         LDI R1, 0x03
+A3C0   // 6A:         ST R1, [R7]
+8EFC   // 6B:         LDI R7, 0xFC
+93C0   // 6C: waitF1: LD R1, [R7]
+3250   // 6D:         AND R1, R1, R2
+C0FD   // 6E:         BNZ waitF1
+8EF5   // 6F:         LDI R7, 0xF5
+8213   // 70:         LDI R1, 0x13
+A3C0   // 71:         ST R1, [R7]
+8EFC   // 72:         LDI R7, 0xFC
+8440   // 73:         LDI R2, 0x40
+93C0   // 74: waitF2: LD R1, [R7]
+3250   // 75:         AND R1, R1, R2
+C0FD   // 76:         BNZ waitF2
+8EFA   // 77:         LDI R7, 0xFA
+8A00   // 78:         LDI R5, 0
+19E8   // 79:         ADD R4, R7, R5
+9300   // 7A:         LD R1, [R4]
+A380   // 7B:         ST R1, [R6]
+1D98   // 7C:         ADD R6, R6, R3
+9300   // 7D:         LD R1, [R4]
+A380   // 7E:         ST R1, [R6]
+1D98   // 7F:         ADD R6, R6, R3
+8EFC   // 80:         LDI R7, 0xFC
+93C0   // 81:         LD R1, [R7]
+A380   // 82:         ST R1, [R6]
+// ================= Part E =================
+8EF0   // 83:         LDI R7, 0xF0
+8200   // 84:         LDI R1, 0
+A3C0   // 85:         ST R1, [R7]
+8EF1   // 86:         LDI R7, 0xF1
+A3C0   // 87:         ST R1, [R7]
+8EF2   // 88:         LDI R7, 0xF2
+8209   // 89:         LDI R1, 9
+A3C0   // 8A:         ST R1, [R7]
+8EF3   // 8B:         LDI R7, 0xF3
+8203   // 8C:         LDI R1, 3
+A3C0   // 8D:         ST R1, [R7]
+8EF0   // 8E:         LDI R7, 0xF0
+8201   // 8F:         LDI R1, 1
+A3C0   // 90:         ST R1, [R7]
+F000   // 91:         HLT

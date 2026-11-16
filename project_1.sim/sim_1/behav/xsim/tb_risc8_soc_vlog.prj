@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" \
+"../../../../../tb/afe_model.v" \
+"../../../../../rtl/alu.v" \
+"../../../../../rtl/periph/apb_regs8.v" \
+"../../../../../rtl/control_unit.v" \
+"../../../../../rtl/dmem.v" \
+"../../../../../rtl/hazard_unit.v" \
+"../../../../../rtl/imem.v" \
+"../../../../../rtl/regfile.v" \
+"../../../../../rtl/risc8_5stage_core.v" \
+"../../../../../rtl/risc8_soc.v" \
+"../../../../../rtl/periph/sar_adc_ctrl.v" \
+"../../../../../rtl/periph/sync_fifo.v" \
+"../../../../../rtl/periph/timer8.v" \
+"../../../../../rtl/periph/timer_adc8_cpu_if.v" \
+"../../../../../rtl/periph/timer_adc8_top.v" \
+"../../../../../tb/tb_risc8_soc.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

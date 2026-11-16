@@ -1,0 +1,21 @@
+Time resolution is 1 ps
+[95000] IO LD Ff  wdata=00 rdata=a8
+[175000] IO ST F6  wdata=03 rdata=04
+[205000] IO ST F7  wdata=00 rdata=00
+[235000] IO ST F5  wdata=13 rdata=00
+[255000] IO LD Fc  wdata=00 rdata=50
+[315000] IO LD Fc  wdata=00 rdata=50
+[375000] IO LD Fc  wdata=00 rdata=10
+[435000] IO LD Fc  wdata=00 rdata=01
+[485000] IO LD Fb  wdata=00 rdata=81
+[535000] IO LD Fa  wdata=00 rdata=56
+[595000] IO ST F1  wdata=03 rdata=00
+[625000] IO ST F2  wdata=18 rdata=ff
+[655000] IO ST F3  wdata=0c rdata=80
+[685000] IO ST F5  wdata=25 rdata=11
+[715000] IO ST F0  wdata=01 rdata=00
+[755000] IO LD Fc  wdata=00 rdata=10
+[815000] IO LD Fc  wdata=00 rdata=10
+[875000] IO LD Fc  wdata=00 rdata=10
+[935000] IO LD Fc  wdata=00 rdata=10
+[995000] IO LD Fc  wdata=00 rdata=10
